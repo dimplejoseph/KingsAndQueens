@@ -148,7 +148,9 @@ class ViewController: UIViewController,UITextFieldDelegate {
                         kingWins++
                         if (queen.text?.isEmpty != nil && (playerTwoName.text as NSString).length > 0){
 
-                            queen.text = (playerTwoName.text as NSString).substringToIndex(12) +  " Wins: \(kingWins)"
+                            if (playerTwoName.text as NSString).length > 5{
+                                queen.text = (playerTwoName.text as NSString).substringToIndex(5) +  " Wins: \(kingWins)"
+                            }else{  queen.text = (playerTwoName.text as NSString) +  " Wins: \(kingWins)" }
 
                         
                         }else{
@@ -165,8 +167,12 @@ class ViewController: UIViewController,UITextFieldDelegate {
                         
                         if (king.text?.isEmpty != nil && (playerOneName.text as NSString).length > 0){
                             
-                        
-                            king.text = (playerOneName.text as NSString).substringToIndex(12) + " Wins: \(queenWins)"
+                            if (playerOneName.text as NSString).length > 5 {
+                                king.text = (playerOneName.text as NSString).substringToIndex(5) + " Wins: \(queenWins)"
+                            }else{
+                                king.text = (playerOneName.text as NSString) + " Wins: \(queenWins)"
+
+                            }
                             
                         }else{
                         
